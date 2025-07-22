@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">BlogPage</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-container">
+    <h2>Latest Blogs</h2>
+    <input type="text" id="searchInput" placeholder="Search blogs..." class="search-bar" />
+
+    <div id="dynamicBlogs"></div>
+
+    <div class="blog-card">
+      <h3>JavaScript Basics</h3>
+      <p class="desc">Introduction to JS.</p>
+      <p><strong>Author:</strong> Abhishek Garg</p>
+      <p><strong>Published By:</strong> Coding Blocks</p>
+      <p><strong>Category:</strong> Programming</p>
+      <p><strong>Date:</strong> 22 July 2025</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>Python for Data Science</h3>
+      <p class="desc">Learn how Python is used in the data science.</p>
+      <p><strong>Author:</strong> Dhawan</p>
+      <p><strong>Published By:</strong> DataHub</p>
+      <p><strong>Category:</strong> Data Science</p>
+      <p><strong>Date:</strong> 18 July 2025</p>
+    </div>
+
+    <div class="blog-card">
+      <h3>Understanding CSS</h3>
+      <p class="desc">Master designs with CSS techniques.</p>
+      <p><strong>Author:</strong> Akash</p>
+      <p><strong>Published By:</strong> Frontend</p>
+      <p><strong>Category:</strong> Web</p>
+      <p><strong>Date:</strong> 15 July 2025</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

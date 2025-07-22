@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">BlogPage</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="admin.html" class="active">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="admin-container">
+    <h2>Add a New Blog</h2>
+    <form id="blogForm">
+      <input type="text" id="title" placeholder="Blog Title" required />
+      <input type="text" id="desc" placeholder="Description" required />
+      <input type="text" id="author" placeholder="Author Name" required />
+      <input type="text" id="publisher" placeholder="Published By" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="date" id="date" required />
+      <button type="submit">Add Blog</button>
+    </form>
+    <p id="msg"></p>
+  </main>
+
+  <script>
+    const form = document.getElementById("blogForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const blog = {
+        title: document.getElementById("title").value,
+        desc: document.getElementById("desc").value,
+        author: document.getElementById("author").value,
+        publisher: document.getElementById("publisher").value,
+        category: document.getElementById("category").value,
+        date: document.getElementById("date").value
+      };
+
+
+      const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+      blogs.push(blog);
+      localStorage.setItem("blogs", JSON.stringify(blogs));
+
+      msg.textContent = "Blog added successfully!";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
